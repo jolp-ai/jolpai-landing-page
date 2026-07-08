@@ -286,6 +286,8 @@ h1 em {
 
 .value p { color: var(--ink-dim); font-size: 15px; }
 
+.value.service h3 { color: var(--teal); }
+
 /* ---------- contact ---------- */
 
 .contact { padding-bottom: 100px; }
