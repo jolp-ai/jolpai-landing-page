@@ -81,7 +81,7 @@ if (form) {
     const company = String(data.get('company')).trim();
     emailText = `Hello Jolpai,\n\nI’d like to discuss an AI or automation project.\n\nName: ${name}\nEmail: ${String(data.get('email')).trim()}\nCompany: ${company || 'Not provided'}\nInterested in: ${service}\n\nWhat I’d like to improve:\n${message}\n\nThank you,\n${name}`;
     document.getElementById('enquiry-preview').textContent = emailText;
-    document.getElementById('send-enquiry').href = `mailto:info@jolpai.tech?subject=${encodeURIComponent(`Project enquiry${company ? ' — ' + company : ''}`)}&body=${encodeURIComponent(emailText)}`;
+    document.getElementById('send-enquiry').href = `mailto:i@jolp.ai?subject=${encodeURIComponent(`Project enquiry${company ? ' — ' + company : ''}`)}&body=${encodeURIComponent(emailText)}`;
     document.getElementById('copy-status').textContent = '';
     form.hidden = true; result.hidden = false;
     document.getElementById('enquiry-result-title').focus();
@@ -94,7 +94,7 @@ if (form) {
     try {
       if (!navigator.clipboard?.writeText) throw new Error('Clipboard unavailable');
       await navigator.clipboard.writeText(emailText);
-      status.textContent = 'Message copied. Paste it into an email to info@jolpai.tech.';
+      status.textContent = 'Message copied. Paste it into an email to i@jolp.ai.';
     } catch {
       const selection = window.getSelection();
       const range = document.createRange(); range.selectNodeContents(document.getElementById('enquiry-preview'));
